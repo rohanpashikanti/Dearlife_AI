@@ -14,7 +14,11 @@ model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 
 # ---- 2. MongoDB Setup ----
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+# Read from environment
+MONGO_URI = os.environ.get("MONGODB_URI")
+
+# Connect to MongoDB Atlas
+client = pymongo.MongoClient(MONGO_URI)
 db = client["next_move_ai_db"]
 collection = db["submissions"]
 
