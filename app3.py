@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
 import re
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
 
